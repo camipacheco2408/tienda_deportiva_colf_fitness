@@ -25,22 +25,31 @@ contraseña: coder2024
 #### Dentro de la pagina Web se pdra recorrer en las siguientes solapas:
 
 Inicio
+
 Indumentaria
+
 Accesorios
+
 Maquinas de Musculacion 
-Maquinas de Cardio.
+
+Maquinas de Cardio
 
 #### Tambien se podran agregar productos a la Base d Datos a traves de las siguientes url:
 
 path: 'agregaraccesorios/'
+
 path 'agregarindumentaria/'
+
 path 'agregarmaqcardio/'
+
 path'agregarmaqmusculacion/'
 
 #### Y buscar Indumentaria en el siguiente link:
+
 path 'buscar_indumentaria'
 
 #### Detalle a considerar: 
+
 Los articulos se encuntran creados dentro de cada archivo html. Aun se encuentra vacia la Base de Datos.
 
 
