@@ -1,0 +1,51 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+<h1 class="mb-5">Maquinas para Cardio</h1>                                
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="container">
+        <h1 class="my-4">Articulos Disponibles</h1>
+        <div class="row">
+<div class="container">
+    <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="{% static 'assets/img/maqcardio1.jpg' %}" alt="Imagen de Accesorio 1">
+                <div class="card-body">
+                        <h4 class="card-title">Cinta de Correr V20T</h4>
+                        <p class="card-text"><strong>Tipo:</strong>Cinta de Correr</p>
+                        <p class="card-text"><strong>Precio:</strong> $2.000.000</p>
+                        <p class="card-text">El modelo V20T Cinta de correr de Etenon Fitness es un modelo intuitivo que cuenta con un diseño elegante, cómodo y fácil de usar, respaldado por un exhaustivo estudio de calidad que garantiza un movimiento de trabajo fluido y efectivo. Esta cinta de correr de alta calidad ha sido diseñada específicamente para uso profesional, con materiales de máxima calidad que garantizan su durabilidad y resistencia en entrenamientos intensivos. Con sus 4 programas de entrenamiento y su nivel de inclinación de -3% a 20%, proporciona una amplia variedad de opciones para ayudarte a alcanzar tus objetivos de acondicionamiento físico deseado. La V20T está equipada con una consola panorámica de 32″, lo que te permite monitorear y controlar tu entrenamiento de manera más eficiente. También cuenta con características adicionales como un sistema de emergencia STOP, entrada para auriculares y conectividad Wi-Fi y Bluetooth, lo que brinda una experiencia de entrenamiento mejorada y más conectada. Destaca su sistema premium de absorción de impactos para una experiencia de cardio cómoda y suave.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'assets/img/maqcardio2.jpg' %}" alt="Imagen de Accesorio 2">
+                    <div class="card-body">
+                        <h4 class="card-title">Ciclo Indoor Ion.6</h4>
+                        <p class="card-text"><strong>Tipo:</strong> Bicicleta</p>
+                        <p class="card-text"><strong>Precio:</strong> $1.500.000</p>
+                        <p class="card-text">El modelo Ciclo Indoor ION.6 de Etenon cuenta con un diseño elegante y estético, respaldado por un exhaustivo estudio de calidad que garantiza un uso totalmente profesional, enfocado en desarrollar un ejercicio cardiovascular óptimo y funcional. Es una bicicleta estática ideal tanto para uso en casa como en el gimnasio. Fabricada en metal con un disco de inercia de 15kg, combina un sistema de transmisión por correa y un sistema de resistencia magnética. Esto permite al usuario ajustar la resistencia de pedaleo, el asiento y el agarre frontal, adaptándolos a sus necesidades y logrando una experiencia de ejercicio fácil y cómoda.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-Q6E9RHjhN5p5sZXF3kD0DXTn4FFVZjslc4x0p1R5Jh0ShpXhewbGLL2xFuxhjmeT" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+IhQb4K5cJzVN1OT0EmFgdBViE3gS9t5v1x" crossorigin="anonymous"></script>
+
+{% endblock %}

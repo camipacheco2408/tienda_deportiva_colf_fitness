@@ -1,0 +1,51 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+<h1 class="mb-5">Indumentaria Deportiva</h1>                                
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="container">
+        <h1 class="my-4">Articulos Disponibles</h1>
+        <div class="row">
+<div class="container">
+    <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="{% static 'assets/img/indumentaria1.jpg' %}" alt="Imagen de Accesorio 1">
+                <div class="card-body">
+                        <h4 class="card-title">Remera Fuark Oversize Premium Bloom Black</h4>
+                        <p class="card-text"><strong>Tipo:</strong>Masculina</p>
+                        <p class="card-text"><strong>Precio:</strong> $30.500</p>
+                        <p class="card-text">Confeccionada en tela viscosa del alta calidad, es suave al tacto, lo que la convierte en la mejor opción para afrontar todos tus desafíos deportivos.Diseñada para una experiencia cómoda. El cuello redondo proporciona un ajuste no restrictivo; la manga corta permite un rango de movimiento más amplio..</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'assets/img/indumentaria2.jpg' %}" alt="Imagen de Accesorio 2">
+                    <div class="card-body">
+                        <h4 class="card-title">KIT SPORT CORTO DARKBLUE</h4>
+                        <p class="card-text"><strong>Tipo:</strong> Femenina</p>
+                        <p class="card-text"><strong>Precio:</strong> $35.999</p>
+                        <p class="card-text">Confeccionada en tela Lycra de la mas alta calidad. Ideal para entrenamiento de todo tipo.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-Q6E9RHjhN5p5sZXF3kD0DXTn4FFVZjslc4x0p1R5Jh0ShpXhewbGLL2xFuxhjmeT" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+IhQb4K5cJzVN1OT0EmFgdBViE3gS9t5v1x" crossorigin="anonymous"></script>
+
+{% endblock %}

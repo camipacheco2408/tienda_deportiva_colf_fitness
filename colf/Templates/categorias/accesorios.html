@@ -1,0 +1,54 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+<h1 class="mb-5">Accesorios Deportivos</h1>                                
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="container">
+        <h1 class="my-4">Articulos Disponibles</h1>
+        <div class="row">
+<div class="container">
+    <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="{% static 'assets/img/accesorio1.jpg' %}" alt="Imagen de Accesorio 1">
+                <div class="card-body">
+                        <h4 class="card-title">Guantes Pesas Gym Guantes Fitness</h4>
+                        <p class="card-text"><strong>Tipo:</strong>Guantes</p>
+                        <p class="card-text"><strong>Precio:</strong> $50.199</p>
+                        <p class="card-text">boildeg Guantes Gimnasio Hombre Mujer,Guantes Pesas Gym Guantes Fitness Transpirable con Protección Completa de Muñeca y Palma para Crossfit Levantamiento de Pesas Musculación.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'assets/img/accesorio2.jpg' %}" alt="Imagen de Accesorio 2">
+                    <div class="card-body">
+                        <h4 class="card-title">C.P.Sports Cinturón de levantamiento de pesas</h4>
+                        <p class="card-text"><strong>Tipo:</strong> Cinturon</p>
+                        <p class="card-text"><strong>Precio:</strong> $99.999</p>
+                        <p class="card-text">Este cinturón de cuero con logotipo estampado es el clásico entre los cinturones de levantamiento y es ideal para el entrenamiento con pesas, como los deadlifts, con grandes pesos. Cuenta con respaldo alto y bien acolchado (aprox. 10 cm de grosor) que sujeta la columna vertebral en la zona lumbar en caso de carga pesada. Y la forma ergonómica garantiza un ajuste perfecto.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-Q6E9RHjhN5p5sZXF3kD0DXTn4FFVZjslc4x0p1R5Jh0ShpXhewbGLL2xFuxhjmeT" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+IhQb4K5cJzVN1OT0EmFgdBViE3gS9t5v1x" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+
+
