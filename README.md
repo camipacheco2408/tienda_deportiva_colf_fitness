@@ -16,6 +16,8 @@ Maquinas de Musculacion para gimnasios.
 
 Maquinas para realizar cardio.
 
+#### Dentro de la Carpeta "ColfFitness" se encuentra el proyecto y dentro de la carpeta "colf" de encuentra la App
+
 ####  Para ingresar a la Bese de tatos se realiza con el siguiente SuperUser:
 
 Usuario: camila2024
