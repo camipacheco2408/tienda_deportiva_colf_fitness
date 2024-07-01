@@ -28,7 +28,7 @@ Accesorios
 Maquinas de Musculacion 
 Maquinas de Cardio.
 
-####Tambien se podran agregar productos a la Base d Datos a traves de las siguientes url:
+#### Tambien se podran agregar productos a la Base d Datos a traves de las siguientes url:
 
 path: 'agregaraccesorios/'
 path 'agregarindumentaria/'
