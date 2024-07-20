@@ -8,6 +8,7 @@ Profesor: Beltrán, Norman
 Tutor: Luan De Souza
 
 ####  Pagina Web dedicada a la venta de los siguientes productos deportivos:
+
 Indumentaria deportiva Femenina y masculina.
 
 Accesorios personales para entrenar.
@@ -16,43 +17,58 @@ Maquinas de Musculacion para gimnasios.
 
 Maquinas para realizar cardio.
 
-#### Dentro de la Carpeta "ColfFitness" se encuentra el proyecto y dentro de la carpeta "colf" de encuentra la App
+### Copio link de carpeta de Drive donde se encuentra el video explicando y mostrando la pagina web:
 
-####  Para ingresar a la Bese de tatos se realiza con el siguiente SuperUser:
+https://drive.google.com/drive/folders/1--JABVH2hT-oj26iZbY8PSOwCWbcZBxM
+
+#### Dentro de la Carpeta "ColfFitness" se encuentra:
+*El proyecto
+* Archivo "Casos de Pruea.xlsx": explicando pruebas realizadas durante el armado de la pagina web.
+
+####Dentro de la carpeta "colf" de encuentra la App
+
+####  Para ingresar a la pagina como administrador se realizara con el siguiente SuperUser:
 
 Usuario: camila2024
 contraseña: coder2024
 
+####  Para ingresar a la pagina con usuario comun:
 
-#### Dentro de la pagina Web se pdra recorrer en las siguientes solapas:
+Usuario: belencoder
+contraseña: coder2024
 
-Inicio
+#### En la pagina se podran registrar con su Usuario y si ya se encuentra creado se podra ingresar, modificar su Perfil, cambiar contraseña y cambiar avatar.
 
-Indumentaria
+#### Una vez logueado el Usuario dentro de la pagina Web podra recorrer las siguientes solapas:
 
-Accesorios
+. Home
 
-Maquinas de Musculacion 
+. Acerca de Colf Fitness
 
-Maquinas de Cardio
+. Indumentaria
 
-#### Tambien se podran agregar productos a la Base d Datos a traves de las siguientes url:
+. Accesorios
 
-path: 'agregaraccesorios/'
+. Maquinas de Musculacion 
 
-path 'agregarindumentaria/'
+. Maquinas de Cardio
 
-path 'agregarmaqcardio/'
+. Usuario: Perfil, solapa para cambio de contraseña y para cambiar el avatar.
 
-path'agregarmaqmusculacion/'
+#### Tambien se podra solo con el usuario Administrador buscar, agregar, actualizar y eliminar productos a traves de las siguientes url:
 
-#### Y buscar Indumentaria en el siguiente link:
+path: 'accesorios/'
 
-path 'buscar_indumentaria'
+path 'indumentaria/'
 
-#### Detalle a considerar: 
+path 'maqcardio/'
 
-Los articulos se encuntran creados dentro de cada archivo html. Aun se encuentra vacia la Base de Datos.
+path'maqmusculacion/'
+
+Ls articulos se encuentran creados detro de la Base de Datos de SQLITE.
+
+#### Con el Usuario comun solo se podra acceder a cada pagina con la opcion de buscar y comprar.
+
 
 
 
