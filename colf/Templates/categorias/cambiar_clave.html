@@ -1,0 +1,19 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+<h1 class="mb-5">Cambiar Contraseña</h1>                                
+{% endblock %}
+
+{% block content %}
+<body>
+    <h2>Cambiar Contraseña</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cambiar Contraseña</button>
+    </form>
+</body>
+
+
+{%endblock%}

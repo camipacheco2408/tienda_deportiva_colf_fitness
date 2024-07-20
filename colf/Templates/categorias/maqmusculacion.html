@@ -5,64 +5,53 @@
 <h1 class="mb-5">Maquinas de Musculacion</h1>                                
 {% endblock %}
 
-
 {% block content %}
-<body>
-    <div class="container">
-        <h1 class="my-4">Articulos Disponibles</h1>
-        <div class="row">
 <div class="container">
-    <div class="row">
-        <!-- Producto 1 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="{% static 'assets/img/maqmusculacion1.jpg' %}" alt="Imagen de Accesorio 1">
-                <div class="card-body">
-                        <h4 class="card-title">Dorsalera Athletic 3822</h4>
-                        <p class="card-text"><strong>Tipo:</strong>Dorsalera</p>
-                        <p class="card-text"><strong>Precio:</strong> $3.000.000</p>
-                        <p class="card-text">Peso en lingotes: 109kg
-                          Estructura/Tubos: Tubo cuadrado
-                          1:50x120mm / 2:50x100mm
-                          Tamaño del equipo (LxAnxAl):
-                          1420x1285x1910mm
-                          Tamaño de la caja (LxAnxAl):
-                          1720x1120x830mm
-                          Peso del equipo: 280/323kg</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Producto 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{% static 'assets/img/maqmusculacion2.jpg' %}" alt="Imagen de Accesorio 2">
-                    <div class="card-body">
-                        <h4 class="card-title">Maquina de Cuadriceps & Femorales. FUSION LINE</h4>
-                        <p class="card-text"><strong>Tipo:</strong> Maquina Cuadriceps-Femorales</p>
-                        <p class="card-text"><strong>Precio:</strong> $3.500.000</p>
-                        <p class="card-text">Dos máquinas en una: extensión de piernas y flexión de piernas sentado. Permite la realización de un doble ejercicio: extensión de pierna (cuádriceps) y curl o flexión de pierna (femoral). 
-
-                          Diseño de la almohadilla espinillera para un movimiento de flexión de piernas mejor.
-                          
-                          Ajuste sencillo de la almohadilla para tobillos y de la posición de inicio desde la posición de sentado.
-                          
-                          Los usuarios pueden añadir peso fácilmente con solo empujar una palanca para aumentar la carga de trabajo. 
-                          
-                          Garantiza movimientos suaves, naturales y con gran concentración muscular.
-                          
-                          Diseño duradero con seguridad y comodidad optimizadas.</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
+    <h1 class="my-4">Artículos Disponibles</h1>
+    <!-- Botones de acción (solo visible para superusuarios) -->
+    {% if user.is_authenticated and user.is_superuser %}
+    <div class="mb-3">
+        <a href="{% url 'maqmusculacion_create' %}" class="btn btn-success">Agregar Producto</a>
+    </div>
+    {% endif %}
+    <!-- Formulario de búsqueda -->
+    <form method="GET" action="{% url 'buscar_maqmusculacion' %}">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar Maquina de Musculacion..." name="buscar">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Buscar</button>
             </div>
         </div>
+    </form>
+
+    <!-- Lista de maqmusculacion -->
+    <div class="row">
+        {% for maquina in maqmusculacion %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="{{ maquina.imagen.url }}" alt="{{ maquina.nombre }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ maquina.nombre }}</h4>
+                    <p class="card-text"><strong>Tipo:</strong> {{ maquina.tipo }}</p>
+                    <p class="card-text"><strong>Precio:</strong> {{ maquina.precio }}</p>
+                    <p class="card-text">{{ maquina.descripcion }}</p>
+                    <!-- Botones de Comprar -->
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <!-- Botones de Actualizar y Eliminar (solo visible para superusuarios) -->
+                {% if user.is_authenticated and user.is_superuser %}
+                <div class="btn-group btn-group-sm d-flex" role="group">
+                    <a href="{% url 'maqmusculacion_update' maquina.pk %}" class="btn btn-primary flex-fill mr-1">Actualizar</a>
+                    <a href="{% url 'maqmusculacion_delete' maquina.pk %}" class="btn btn-danger flex-fill ml-1">Eliminar</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p>No se encontraron resultados.</p>
+        {% endfor %}
     </div>
-
-    <!-- Bootstrap JS y dependencias -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-Q6E9RHjhN5p5sZXF3kD0DXTn4FFVZjslc4x0p1R5Jh0ShpXhewbGLL2xFuxhjmeT" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+IhQb4K5cJzVN1OT0EmFgdBViE3gS9t5v1x" crossorigin="anonymous"></script>
-
+</div>
 {% endblock %}

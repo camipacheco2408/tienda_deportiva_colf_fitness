@@ -1,0 +1,41 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+<h1 class="mb-5">Lista de Accesorios</h1>                                
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Resultados de la Búsqueda</h1>
+    <div class="row">
+        {% if accesorios %}
+            {% for accesorio in accesorios %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ accesorio.imagen.url }}" alt="{{ accesorio.nombre }}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ accesorio.nombre }}</h4>
+                        <p class="card-text"><strong>Tipo:</strong> {{ accesorio.tipo }}</p>
+                        <p class="card-text"><strong>Precio:</strong> {{ accesorio.precio }}</p>
+                        <p class="card-text">{{ accesorio.descripcion }}</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                    <!-- Botones de Actualizar y Eliminar (solo visible para superusuarios) -->
+                    {% if user.is_authenticated and user.is_superuser %}
+                    <div class="btn-group btn-group-sm d-flex" role="group">
+                        <a href="{% url 'accesorios_update' accesorio.pk %}" class="btn btn-primary flex-fill mr-1">Actualizar</a>
+                        <a href="{% url 'accesorios_delete' accesorio.pk %}" class="btn btn-danger flex-fill ml-1">Eliminar</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No se encontraron resultados.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

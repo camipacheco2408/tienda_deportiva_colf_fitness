@@ -15,28 +15,73 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-        <a href="{% url 'home' %}" class="nav-link">
-          <button class="boton-estetico boton-negro">Home</button>
-        </a>
-        <a href="{% url 'indumentaria' %}" class="nav-link">
-          <button class="boton-estetico boton-negro">Indumentaria</button>
-        </a>
-        <a href="{% url 'accesorios' %}" class="nav-link">
-          <button class="boton-estetico boton-negro">Accesorios</button>
-        </a>
-        <a href="{% url 'maqmusculacion' %}" class="nav-link">
-          <button class="boton-estetico boton-negro">Máquinas de Musculación</button>
-        </a>
-        <a href="{% url 'maqcardio' %}" class="nav-link">
-          <button class="boton-estetico boton-negro">Cardio</button>
-        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'acerca' %}">Acerca de Colf Fitness</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'indumentaria' %}">Indumentaria</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'accesorios' %}">Accesorios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'maqmusculacion' %}">Máquinas de Musculación</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'maqcardio' %}">Cardio</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ user.first_name }} {{ user.last_name }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{% url 'cambiar_clave' %}">Cambiar Contraseña</a></li>
+                        </li>
+                          <li>
+                              <form action="{% url 'logout' %}" method="post">
+                                  {% csrf_token %}
+                                  <button class="dropdown-item" type="submit">Logout</button>
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{% url 'agregar_avatar' %}" class="nav-link">
+                          <img class="rounded-circle" src="{{ request.session.avatar }}" height="30" width="30" alt="Mi foto">
+                      </a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'registro' %}"><i class="fas fa-user-plus"></i> Registrarse</a>
+                  </li>
+                  {% endif %}
+              </ul>
+          </div>
       </div>
-    </nav>    
+  </nav>    
     <!-- Masthead -->
     <header class="masthead">
       <div class="container position-relative">
@@ -58,28 +103,7 @@
 
       {% endblock %}
     </div>
-    <!-- acerca -->
-    <div id="about" class="about">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                  <div class="about_img">
-                      <figure><img src="{% static 'assets/img/about-img.jpg' %}" alt="#" /></figure>
-                  </div>
-              </div>
-              <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 pa-ing">
-                  <div class="about_text">
-                      <div class="about_text_box">
-                          <h2>Acerca de nosotros<strong class="black_white"></strong></h2>
-                          <p>En Colf Fitness, nos apasiona proporcionar equipos de gimnasio de alta calidad que te ayuden a alcanzar tus objetivos de fitness. Desde máquinas de musculación hasta equipos de cardio y moda deportiva, estamos comprometidos a ofrecerte soluciones que inspiren y potencien tu estilo de vida activo. Nuestro objetivo es ser tu compañero de confianza en el camino hacia una vida más saludable y enérgica.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- end about -->
-    <!-- footer -->
+    <!-- footer --></div>
     <div id="contact" class="contact">
       <div class="container">
           <div class="row">

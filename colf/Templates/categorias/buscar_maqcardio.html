@@ -1,0 +1,19 @@
+{% extends "categorias/index.html" %}
+
+
+{% block title %}
+<h1 class="mb-5">Buscar Maquinas de Cardio</h1>                                
+{% endblock %}
+
+
+{% block content %}   
+
+<form action="{% url 'ncontrar_maqcardio' %}" method="get">
+    {% csrf_token %}
+    <table>
+        <p>Ingrese patron de busqueda: <input type="text" name="buscar" id="buscar"></p>
+    </table>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}

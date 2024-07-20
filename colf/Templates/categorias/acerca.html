@@ -1,0 +1,24 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block title %}
+
+<div id="about" class="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about_img">
+                    <img src="{% static 'assets/img/about-img.jpg' %}" class="img-fluid" alt="Acerca de nosotros">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about_text">
+                    <h2>Acerca de nosotros</h2>
+                    <p class="lead">En Colf Fitness, nos apasiona proporcionar equipos de gimnasio de alta calidad que te ayuden a alcanzar tus objetivos de fitness. Desde máquinas de musculación hasta equipos de cardio y moda deportiva, estamos comprometidos a ofrecerte soluciones que inspiren y potencien tu estilo de vida activo. Nuestro objetivo es ser tu compañero de confianza en el camino hacia una vida más saludable y enérgica.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
